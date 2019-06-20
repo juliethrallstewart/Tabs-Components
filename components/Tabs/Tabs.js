@@ -59,3 +59,31 @@ class TabItem {
 
 const links = document.querySelectorAll(".tabs-link").forEach(link => new TabLink(link));
 console.log(links)
+
+// random headline colors 
+const tabHeader = document.querySelectorAll('.tabs-item-title');
+console.log(tabHeader)
+
+const tabsLink = document.querySelectorAll('.tabs-link');
+tabsLink.forEach(item => item.addEventListener('mousemove', randomColor))
+
+
+//console.log(navLinks)
+
+
+tabHeader.forEach(item => item.addEventListener('mousemove', randomColor))
+
+function randomColor() {
+  let min = 100000;
+  let max = 500000;
+  let randomNumber = Math.floor(Math.random() * (+max - +min));
+  if (randomNumber < 10000) {
+    randomNumber += 10000;
+  }
+  event.target.style.color = `#${randomNumber}`;
+  //console.log(`#${randomNumber}`)
+  //event.stopPropagation();
+  event.preventDefault();
+
+
+}
