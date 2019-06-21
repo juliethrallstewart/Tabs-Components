@@ -1,3 +1,15 @@
+@keyframes flickerAnimation {
+  /* flame pulses */
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -63,29 +75,31 @@
   font-weight: bold;
   padding-bottom: 10px;
 }
+.tabs .tabs-item .animate-flicker {
+  opacity: 1;
+  animation: flickerAnimation 1s infinite;
+}
 .tabs .tabs-item-selected {
   display: block;
 }
 .tabs .tabs-links {
   display: flex;
-  background-color: #931d25;
 }
 .tabs .tabs-link {
-  padding: 20px 25px;
+  padding: 20px 4.5%;
   font-size: 24px;
-  background-color: #931d25;
   border-right: 1px solid white;
-  color: #ffffff;
+  color: teal;
   cursor: pointer;
 }
 .tabs .tabs-link:hover {
-  background-color: #be2530;
+  color: black;
 }
 .tabs .tabs-link-selected {
   z-index: 2;
-  border-right: 1px solid #931d25;
   background-color: #ffffff;
   color: black;
+  color: orange;
 }
 .tabs .tabs-link-selected:hover {
   background-color: #ffffff;
